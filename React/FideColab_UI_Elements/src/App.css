@@ -1,0 +1,270 @@
+:root{
+  --gray-clr: #e7e8e8;
+  --blue-royal-clr: #1935ca;
+  --transparent-royal-clr: rgba(25, 52, 202, 0.2);
+  --dark-royal-clr: #0d24a1;
+  --white-smoke-clr: #fbf9f9;
+  --white-clr: #fffffe;
+  --orange-clr: #fcb712;
+  --transparent-orange-clr: rgba(242, 160, 7, 0.2);
+  --dark-orange-clr: #ce8806;
+  --primary-text-clr: #696F79;
+}
+  
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: "Rubik", serif;
+    line-height: 1.5rem;
+    color: var(--primary-text-clr);
+    background-color: var(--white-smoke-clr);
+}
+
+.body{
+    min-height: 100vh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+
+    display: grid;
+    grid-template: 
+    "header header" 10vh
+    "sidebar main" 1fr/
+    auto 1fr;    
+}
+
+.header {
+    grid-area: header;
+    min-width: 100%;
+    background-color: var(--white-smoke-clr);
+
+    display: grid;
+    grid-template-columns: 80px auto auto;    
+}
+
+.header__btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button{
+      all: unset;
+      cursor: pointer;
+    }
+
+    i{
+        color: var(--blue-royal-clr);
+        font-size: 24px;
+    }
+}
+
+.header__logo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px;
+}
+
+.logo__img{
+    width: 50px;
+}
+
+.logo__text{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--blue-royal-clr);
+}
+
+.header__profile{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding-right: 30px;
+
+    i{
+        font-size: 34px;
+        color: var(--blue-royal-clr);
+    }
+}
+
+.profile__text{
+   font-size: 16px;
+   font-weight: 500;
+   color: var(--blue-royal-clr);
+}
+
+.main{
+    grid-area: main;
+    padding: 0px 15px 15px 0px;
+}
+
+.main__container{
+    height: 100%;
+    display: grid;
+}
+
+.container__content{
+    grid-area: "content";
+    border: 1px solid var(--line-clr);
+    border-radius: 1em;
+    padding: 50px;
+    background-color: var(--white-clr);
+    box-shadow: 1px 1px 25px 3px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.content__title{
+    align-self: center;
+    font-size: 16px;
+    color: var(--blue-royal-clr);
+}
+
+.container__text {
+    color: var(--secondary-text-clr);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.sidebar{    
+  grid-area: sidebar;
+  top: 10vh;
+  height: 90vh;
+  width: 280px;
+  padding: 0px 10px;
+  background-color: var(--base-clr);
+  transition: 300ms ease-in-out;
+  
+  padding-top: 0.5vmin;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+}
+
+.sidebar i{
+    font-size: 20px;
+    color: var(--primary-clr);
+}
+
+.close__btn{
+    padding: 16px;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    background-color: var(--white-smoke-clr);
+    color: var(--primary-text-clr);
+}
+
+.rotate{
+  i{
+    color: var(--orange-clr);
+  }    
+}
+
+.sidebar__list{
+  height: 100%;
+  width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.list__item{
+    border-radius: .5em;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    padding-inline: 20px;
+}
+
+.list__item--active{
+    background-color: var(--blue-royal-clr);
+
+    i{
+        color: white;
+    }
+}
+
+.item__area{
+    text-decoration: none;
+    color: var(--text-clr);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    font-weight: 500;
+}
+
+.area__text{
+    color: var(--primary-clr);
+}
+
+.area__text--active{
+    color: white;
+}
+
+.top__logo{
+    font-weight: 600;
+}
+
+.sidebar__bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.bottom__btn{
+    height: 55px;
+    width: 100%;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Rubik", serif;
+
+    background-color: var(--blue-royal-clr);
+    color: white;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.bottom__btn i{
+    display: none;
+}
+
+.close{
+    width: 80px;
+
+    .area__text{
+        display: none;
+    }
+
+    .sidebar__list{
+        align-items: center;
+    }
+
+    .list__item{
+        padding: 0px;   
+        justify-content: center;     
+    }
+
+    .btn__text{
+        display: none;
+    }
+
+    .bottom__btn i{
+        color: white;
+        display: block;
+    }
+}
